@@ -9,9 +9,9 @@ https://documenter.getpostman.com/view/3076044/loans-api/77h6P84
 
 ## Getting Started:
 <pre>
-setup and create sqlite3 database:
-    python app/setup.py
+1. python virtualenv activation
+    source venv/bin/activate
 
-runs api on http://127.0.0.1:4000:
-    python app/main.py
+2. run api on http://127.0.0.1:4000:
+    pipenv run python main.py
 </pre>
