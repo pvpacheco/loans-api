@@ -1,4 +1,4 @@
-from validators import valid
+from .validators import valid
 
 
 class Payment(object):

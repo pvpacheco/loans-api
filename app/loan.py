@@ -1,7 +1,8 @@
-from validators import valid
-from decimal import Decimal
-from utils import Utils
 import decimal
+from decimal import Decimal
+
+from .validators import valid
+from .utils import Utils
 
 
 class Loan(object):

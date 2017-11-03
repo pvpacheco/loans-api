@@ -7,11 +7,22 @@ Python 3, Flask-RESTful, SQLite 3, TDD
 ## Documentation:
 https://documenter.getpostman.com/view/3076044/loans-api/77h6P84
 
+## Deploy on Heroku:
+https://obscure-castle-95284.herokuapp.com/loans
+
 ## Getting Started:
+You can use above heroku deploy url and follow postman's documentation or run the server in your own enviroment. To do that, follow the instructions bellow:
+
 <pre>
-1. python virtualenv activation
+1. python virtualenv activation:
     source venv/bin/activate
 
-2. run api on http://127.0.0.1:4000:
-    pipenv run python main.py
+2. run api on http://127.0.0.1:8080:
+    pipenv run waitress-serve app.main:app
+</pre>
+
+## Runing tests file
+<pre>
+1. simply run:
+    nosetests
 </pre>

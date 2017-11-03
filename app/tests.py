@@ -1,8 +1,9 @@
 import unittest
 import dateutil.parser
 from decimal import Decimal
-from loan import Loan
-from payment import Payment
+
+from .loan import Loan
+from .payment import Payment
 
 
 class TestLoan(unittest.TestCase):
