@@ -1,13 +1,13 @@
-from .validators import valid
+from ..utils import Valid
 
 
 class Payment(object):
 
-    def __init__(self, id, payment, date, amount):
-        self._id = valid.integer(id)
-        self._payment = valid.payment_type(payment)
-        self._date = valid.date(date)
-        self._amount = valid.decimal(amount)
+    def __init__(self, id, payment, amount, date):
+        self._id = Valid.integer(id)
+        self._payment = Valid.payment_type(payment)
+        self._date = Valid.date(date)
+        self._amount = Valid.decimal(amount)
 
     @property
     def id(self):
@@ -15,7 +15,7 @@ class Payment(object):
 
     @id.setter
     def id(self, value):
-        self._id = valid.integer(value)
+        self._id = Valid.integer(value)
 
     @property
     def payment(self):
@@ -23,7 +23,7 @@ class Payment(object):
 
     @payment.setter
     def payment(self, value):
-        self._payment = valid.payment_type(value)
+        self._payment = Valid.payment_type(value)
 
     @property
     def date(self):
@@ -31,7 +31,7 @@ class Payment(object):
 
     @date.setter
     def date(self, value):
-        self._date = valid.date(value)
+        self._date = Valid.date(value)
 
     @property
     def amount(self):
@@ -39,4 +39,4 @@ class Payment(object):
 
     @amount.setter
     def amount(self, value):
-        self._amount = valid.decimal(value)
+        self._amount = Valid.decimal(value)

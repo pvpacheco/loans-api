@@ -1,19 +1,18 @@
 import decimal
 from decimal import Decimal
 
-from .validators import valid
-from .utils import Utils
+from ..utils import Valid, Formatter
 
 
 class Loan(object):
 
     def __init__(self, id, amount, term, rate, date, payments):
-        self._id = valid.integer(id)
-        self._amount = valid.decimal(amount)
-        self._term = valid.integer(term)
-        self._rate = valid.decimal(rate)
-        self._date = valid.date(date)
-        self._payments = valid.array_of_payments(payments)
+        self._id = Valid.integer(id)
+        self._amount = Valid.decimal(amount)
+        self._term = Valid.integer(term)
+        self._rate = Valid.decimal(rate)
+        self._date = Valid.date(date)
+        self._payments = Valid.array_of_payments(payments)
 
     @property
     def id(self):
@@ -21,7 +20,7 @@ class Loan(object):
 
     @id.setter
     def id(self, value):
-        self._id = valid.integer(value)
+        self._id = Valid.integer(value)
 
     @property
     def amount(self):
@@ -29,7 +28,7 @@ class Loan(object):
 
     @amount.setter
     def amount(self, value):
-        self._amount = valid.decimal(value)
+        self._amount = Valid.decimal(value)
 
     @property
     def term(self):
@@ -37,7 +36,7 @@ class Loan(object):
 
     @term.setter
     def term(self, value):
-        self._term = valid.integer(value)
+        self._term = Valid.integer(value)
 
     @property
     def rate(self):
@@ -45,7 +44,7 @@ class Loan(object):
 
     @rate.setter
     def rate(self, value):
-        self._rate = valid.decimal(value)
+        self._rate = Valid.decimal(value)
 
     @property
     def date(self):
@@ -53,7 +52,7 @@ class Loan(object):
 
     @date.setter
     def date(self, value):
-        self._date = valid.date(value)
+        self._date = Valid.date(value)
 
     @property
     def payments(self):
@@ -61,10 +60,10 @@ class Loan(object):
 
     @payments.setter
     def payments(self, value):
-        self._payments = valid.array_of_payments(value)
+        self._payments = Valid.array_of_payments(value)
 
     def formated_id(self):
-        return Utils.format_id(self._id)
+        return Formatter.format_id(self._id)
 
     # Calculates loan installment
     #
