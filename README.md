@@ -14,8 +14,14 @@ https://obscure-castle-95284.herokuapp.com/loans
 You can use above heroku deploy url and follow postman's documentation or run the server in your own enviroment. To do that, follow the instructions bellow:
 
 <pre>
-1. python virtualenv activation:
-    source venv/bin/activate
+1. if not already available, install pipenv:
+    brew install pipenv
+
+2. install dependencies
+    pipenv install
+
+3. activate project's enviroment:
+    pipenv shell
 
 2. run api on http://127.0.0.1:8080:
     pipenv run waitress-serve app.main:app
